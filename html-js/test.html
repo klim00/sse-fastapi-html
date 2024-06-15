@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <link rel="stylesheet" href="style.css" />
+  <body>
+    <h1 id="title"></h1>
+    <div id="content"></div>
+    <div id="console"></div>
+    <script language="javascript">
+      var realConsoleLog = console.log;
+      console.log = function () {
+        var message = [].join.call(arguments, " ");
+        $(".console").text(message);
+        realConsoleLog.apply(console, arguments);
+      };
+      console.log("hello", "my", "name", "is", "shantharuban");
+    </script>
+  </body>
+  <script src="test.js"></script>
+</html>
