@@ -2,18 +2,13 @@
 <html>
   <link rel="stylesheet" href="style.css" />
   <body>
-    <h1 id="title"></h1>
-    <div id="content"></div>
-    <div id="console"></div>
-    <script language="javascript">
-      var realConsoleLog = console.log;
-      console.log = function () {
-        var message = [].join.call(arguments, " ");
-        $(".console").text(message);
-        realConsoleLog.apply(console, arguments);
-      };
-      console.log("hello", "my", "name", "is", "shantharuban");
-    </script>
+    <div class="body">
+      <div class="header" id="header"></div>
+      <div class="main" id="main">
+        <div class="content" id="content"></div>
+        <div class="console" id="console"></div>
+      </div>
+    </div>
   </body>
   <script src="test.js"></script>
 </html>
